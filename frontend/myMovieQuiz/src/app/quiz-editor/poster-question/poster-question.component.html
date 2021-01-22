@@ -1,0 +1,24 @@
+<app-qaswitch (setSection)="onSelectedSection($event)"></app-qaswitch>
+
+<div class="d-flex justify-content-center mt-2 " style="height: 400px">
+
+  <div *ngIf="showQuestion === true" class="border row col-md-5 d-flex justify-content-center"
+    style="background-color: rgba(179, 218, 218, 0.1);">
+    <img src="{{ quizedMovie.poster}}" alt="movie poster" class="img-thumbnail" style="height: 100%;"
+      [ngStyle]="{'filter': blurring + ' ' + color }" [style.transform]="rotation">
+  </div>
+
+  <div *ngIf="showQuestion === false" class="border row col-md-5 d-flex justify-content-center"
+    style="background-color: rgba(179, 218, 218, 0.1);">
+    <h1 class="my-auto">{{ quizedMovie.title }}</h1>
+  </div>
+
+</div>
+
+<div class="container">
+  <div class="d-flex justify-content-center mt-2">
+    Blur<mat-slider min="0" max="15" step="1" value="1" (input)="onBlurChange($event)"></mat-slider>
+    Color<mat-slider min="0" max="360" step="10" value="1" (input)="onColorChange($event)"></mat-slider>
+    Rotate<mat-slide-toggle (input)="onRotationChange()"></mat-slide-toggle>
+  </div>
+</div>
