@@ -1,0 +1,17 @@
+<div *ngIf="quizedMovie != undefined">
+
+    <div>
+        <ng-container [ngSwitch]="component">                 
+            <app-plot-question [quizedMovie]="quizedMovie" *ngSwitchCase="1"></app-plot-question>
+            <app-actor-question [quizedMovie]="quizedMovie" *ngSwitchCase="2"></app-actor-question>
+            <app-poster-question [quizedMovie]="quizedMovie" *ngSwitchCase="3"></app-poster-question>
+            <app-trailer-question [quizedMovie]="quizedMovie" *ngSwitchCase="4"></app-trailer-question>
+        </ng-container>
+    </div>
+    <div class="d-flex justify-content-start ml-3 mt-3">
+        <button class="btn btn-sm btn-info mr-2" (click)="questionEditor(1)">Plot</button>
+        <button class="btn btn-sm btn-info mr-2" (click)="questionEditor(2)">Actor</button>
+        <button class="btn btn-sm btn-info mr-2" (click)="questionEditor(3)">Poster</button>
+        <button class="btn btn-sm btn-info" (click)="questionEditor(4)">Trailer</button>
+    </div>
+</div>

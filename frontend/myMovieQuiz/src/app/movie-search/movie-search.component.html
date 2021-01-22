@@ -1,0 +1,14 @@
+<div class="text-center">
+  <div class="container d-flex flex-row justify-content-center">
+      <div *ngFor="let movie of movieList" class="mr-2" (click)="chooseMovie(movie.title)">
+        <img [src]="'https://image.tmdb.org/t/p/w92' + movie.poster">
+      </div>
+  </div>
+
+  <div class="mt-3">
+    <form autocomplete="off" #searchMovie="ngForm" (ngSubmit)=submitForm(searchMovie.value)>
+      <input type="text" name="movieSearch" (ngModel)="model.search">
+    </form>
+  </div>  
+
+</div>
